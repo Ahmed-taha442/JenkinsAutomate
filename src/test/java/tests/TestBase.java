@@ -13,23 +13,16 @@ import java.time.Duration;
 
 public class TestBase {
     public static WebDriver driver;
-    public String generalEmail = "ahmed@gmail12.com";
+    public String generalEmail = "ahmed@gmail122.com";
     public String generalPassword = "123456_Test";
 
 
     @BeforeSuite
-    @Parameters({"browser"})
-    public void Start(String browse) {
 
-        if (browse.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
-        } else if (browse.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
-        } else if (browse.equalsIgnoreCase("edge")) {
-            driver = new EdgeDriver();
-        } else {
-            throw new IllegalArgumentException("Browser not supported: " + browse);
-        }
+    public void Start() {
+
+        driver = new ChromeDriver();
+
         driver.get("https://demo.nopcommerce.com/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.manage().window().maximize();
