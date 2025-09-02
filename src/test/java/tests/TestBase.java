@@ -13,7 +13,7 @@ import java.time.Duration;
 
 public class TestBase {
     public static WebDriver driver;
-    public String generalEmail = "ahmed@gmail1.com";
+    public String generalEmail = "ahmed@gmail12.com";
     public String generalPassword = "123456_Test";
 
 
