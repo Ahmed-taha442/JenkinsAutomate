@@ -14,8 +14,10 @@
       <class name="tests.MyAccountTest">
         <methods>
           <include name="teerDown"/>
+          <include name="login"/>
           <include name="Start"/>
           <include name="changePassword"/>
+          <include name="validLogin"/>
           <include name="goMyAccount"/>
           <include name="closeAlert"/>
           <include name="logout"/>

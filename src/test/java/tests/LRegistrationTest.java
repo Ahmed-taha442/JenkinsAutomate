@@ -22,8 +22,6 @@ public class LRegistrationTest extends TestBase{
                 registrationObject.successMessage.getText());
 
         // الانتظار حتى يصبح رابط "Register" قابلاً للنقر قبل الضغط عليه
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".ico-register")));
-        driver.findElement(By.cssSelector(".ico-register")).click();
 
 
     }

@@ -14,7 +14,7 @@ import java.time.Duration;
 public class TestBase {
     public static WebDriver driver;
 
-    public String generalEmail = "ahmed@gmai44454l.com";
+    public String generalEmail = "ahmed@gmai444454l.com";
     public String generalPassword = "123456_Test";
 
     @BeforeSuite
