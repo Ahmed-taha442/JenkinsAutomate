@@ -21,7 +21,7 @@ jobs:
           cache: maven
 
       - name: Install Google Chrome
-        run: sudo apt-get install -y google-chrome-stable
+        run: sudo apt-get update && sudo apt-get install -y google-chrome-stable
 
       - name: Run Maven tests
         run: mvn clean test
