@@ -25,19 +25,24 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y wget unzip xvfb
+          # تثبيت Google Chrome
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
+          # تحديد نسخة Chrome
           CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
-          DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+          echo "Chrome version: $CHROME_VERSION"
+          # تثبيت ChromeDriver
+          DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+          echo "ChromeDriver version: $DRIVER_VERSION"
           wget https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip
           sudo mv chromedriver /usr/bin/chromedriver
           sudo chmod +x /usr/bin/chromedriver
 
-      # ✅ تشغيل Maven Tests
+      # ✅ تشغيل Maven Tests مع xvfb
       - name: Build and Test with Maven
         run: |
-          xvfb-run mvn -B clean test --file pom.xml
+          xvfb-run -a mvn -B clean test --file pom.xml
 
       # Optional: رفع dependency graph
       - name: Update dependency graph
