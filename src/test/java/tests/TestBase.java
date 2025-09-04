@@ -24,7 +24,7 @@ public class TestBase {
         // Headless for Linux (GitHub Actions)
         String osName = System.getProperty("os.name").toLowerCase();
         if (osName.contains("linux")) {
-            options.addArguments("--headless=new");
+            options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");

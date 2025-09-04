@@ -21,7 +21,15 @@ jobs:
           cache: maven
 
       - name: Install Google Chrome
-        run: sudo apt-get update && sudo apt-get install -y google-chrome-stable
+        run: sudo apt-get update && sudo apt-get install -y google-chrome-stable unzip
+
+      - name: Install ChromeDriver
+        run: |
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
+          wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION > /tmp/chromedriver_version
+          wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$(cat /tmp/chromedriver_version)/chromedriver_linux64.zip
+          unzip /tmp/chromedriver.zip -d /usr/local/bin/
+          chmod +x /usr/local/bin/chromedriver
 
       - name: Run Maven tests
         run: mvn clean test
