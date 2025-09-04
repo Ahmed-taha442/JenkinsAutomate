@@ -23,7 +23,11 @@ public class TestBase {
 
         String osName = System.getProperty("os.name").toLowerCase();
         if (osName.contains("linux")) {
-            options.addArguments("--headless=new");
+            options.addArguments("--headless=new");  // headless حديث
+            options.addArguments("--disable-gpu");
+            options.addArguments("--window-size=1440,900");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
 
         }
 
