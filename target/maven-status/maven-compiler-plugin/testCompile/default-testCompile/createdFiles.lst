@@ -1,0 +1,5 @@
+tests\MyAccountTest.class
+tests\LoginTest.class
+tests\LRegistrationTest.class
+tests\TestBase.class
+utilitize\Helper.class

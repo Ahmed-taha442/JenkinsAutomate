@@ -1,13 +1,18 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.HomePage;
+import pages.LoginPage;
+import pages.RegistrationPage;
+import pages.SearchPage;
 
-public class AddCartTest extends TestBase {
+public class SearchTest extends TestBase{
+
+    SearchPage searchPage;
     HomePage homeObject;
     LoginPage loginPage;
     RegistrationPage registrationObject ;
-    AddCartPage addCartPage ;
 
     @Test
     public void registrationSuccessfully(){
@@ -19,7 +24,7 @@ public class AddCartTest extends TestBase {
 
 
     }
-    @Test(dependsOnMethods = "registrationSuccessfully")
+    @Test
     public void  logout (){
 
 
@@ -39,15 +44,29 @@ public class AddCartTest extends TestBase {
         loginPage.submitBtn();
 
     }
-    @Test (dependsOnMethods = "validLogin")
-    public void goPage(){
-        addCartPage = new AddCartPage(driver);
-        addCartPage.goTODesktops();
 
+    @Test(dependsOnMethods = "validLogin")
+    public void writeSearch(){
+        searchPage=new SearchPage(driver);
+        searchPage.writeSearch("apple");
     }
-    @Test(dependsOnMethods = "goPage")
-    public void testAddSpecificProductToCart() {
-        addCartPage.addCart("Digital Storm VANQUISH Custom Performance PC");
+
+
+    @Test(dependsOnMethods = "writeSearch")
+    public void selectFirist(){
+        searchPage.choose();
     }
+
+    @Test(dependsOnMethods = "selectFirist")
+    public void contacts(){
+        searchPage=new SearchPage(driver);
+
+        searchPage.scrollToBottom();
+        searchPage.clickContact();
+    }
+
+
+
+
 
 }

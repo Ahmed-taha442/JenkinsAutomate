@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Nop Commerce">
+    <test  name="C:/Users/NV_User/Documents/NopCommerced">
+        <classes>
+            <class name="tests.LRegistrationTest"/>
+            <class name="tests.LoginTest"/>
+            <class name="tests.MyAccountTest"/>
+
+
+
+
+        </classes>
+    </test>
+</suite>

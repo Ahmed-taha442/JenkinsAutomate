@@ -1,0 +1,7 @@
+pages\LoginPage.class
+pages\HomePage.class
+pages\SearchPage.class
+pages\PageBase.class
+pages\RegistrationPage.class
+pages\AddCartPage.class
+pages\MyAccountPage.class

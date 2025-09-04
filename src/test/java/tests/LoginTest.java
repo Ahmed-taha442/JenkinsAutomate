@@ -22,7 +22,7 @@ public class LoginTest extends TestBase {
         loginPage.submitBtn();
 
     }
-    @Test(testName = "BILQ-265", dependsOnMethods = "validLogin")
+    @Test( dependsOnMethods = "validLogin")
     public void goAccount(){
         loginPage =new LoginPage(driver);
         loginPage.goMyAccount();

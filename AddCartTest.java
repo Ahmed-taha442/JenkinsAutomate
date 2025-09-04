@@ -1,20 +1,15 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.RegistrationPage;
-import pages.SearchPage;
+import pages.*;
 
-public class SearchTest extends TestBase{
-
-    SearchPage searchPage;
+public class AddCartTest extends TestBase {
     HomePage homeObject;
     LoginPage loginPage;
     RegistrationPage registrationObject ;
+    AddCartPage addCartPage ;
 
-    @Test
+    @Test(priority = 1)
     public void registrationSuccessfully(){
         homeObject = new HomePage(driver);
         homeObject.clickRegister();
@@ -24,49 +19,35 @@ public class SearchTest extends TestBase{
 
 
     }
-    @Test(dependsOnMethods = "registrationSuccessfully")
+    @Test(dependsOnMethods = "registrationSuccessfully" ,priority = 2)
     public void  logout (){
 
 
         registrationObject.logouts();
     }
 
-    @Test(dependsOnMethods = "logout")
+    @Test(dependsOnMethods = "logout" ,priority = 3)
     public void login(){
         homeObject=new HomePage(driver);
         homeObject.loginFromHome();
     }
 
-    @Test (dependsOnMethods = "login")
+    @Test (dependsOnMethods = "login",priority = 4)
     public void validLogin(){
         loginPage = new LoginPage(driver);
         loginPage.login(generalEmail,generalPassword);
         loginPage.submitBtn();
 
     }
+    @Test (dependsOnMethods = "validLogin",priority = 5)
+    public void goPage(){
+        addCartPage = new AddCartPage(driver);
+        addCartPage.goTODesktops();
 
-    @Test(dependsOnMethods = "validLogin")
-    public void writeSearch(){
-        searchPage=new SearchPage(driver);
-        searchPage.writeSearch("apple");
     }
-
-
-    @Test(dependsOnMethods = "writeSearch")
-    public void selectFirist(){
-        searchPage.choose();
+    @Test(dependsOnMethods = "goPage",priority = 5)
+    public void testAddSpecificProductToCart() {
+        addCartPage.addCart("Digital Storm VANQUISH Custom Performance PC");
     }
-
-    @Test(dependsOnMethods = "selectFirist")
-    public void contacts(){
-        searchPage=new SearchPage(driver);
-
-        searchPage.scrollToBottom();
-        searchPage.clickContact();
-    }
-
-
-
-
 
 }
