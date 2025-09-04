@@ -21,25 +21,23 @@ public class TestBase {
     public void Start() {
         ChromeOptions options = new ChromeOptions();
 
+        // Headless for Linux (GitHub Actions)
         String osName = System.getProperty("os.name").toLowerCase();
         if (osName.contains("linux")) {
-            options.addArguments("--headless=new");  // headless حديث
+            options.addArguments("--headless=new");
             options.addArguments("--disable-gpu");
-            options.addArguments("--window-size=1440,900");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
-
+            options.addArguments("--window-size=1440,900");
         }
 
-        options.addArguments("--user-data-dir=/tmp/chrome-profile-" + System.currentTimeMillis());
 
         driver = new ChromeDriver(options);
 
         driver.manage().window().setSize(new Dimension(1440, 900));
-
         driver.get("https://demo.nopcommerce.com/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        // Explicit Wait for page load
         new WebDriverWait(driver, Duration.ofSeconds(20))
                 .until(webDriver -> ((JavascriptExecutor) webDriver)
                         .executeScript("return document.readyState").equals("complete"));
