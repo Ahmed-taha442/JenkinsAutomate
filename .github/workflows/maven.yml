@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java CI with Maven (Selenium without ChromeOptions)
 
 on:
   push:
@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -20,13 +21,25 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      #  تثبيت Chrome فقط 
-      - name: Install Chrome
+      # تثبيت Chrome
+      - name: Install Google Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          sudo apt-get install -y wget unzip
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
-      #  Maven Tests
-      - name: Build and Test with Maven
+      #  ChromeDriver 
+      - name: Install ChromeDriver
         run: |
-          mvn -B clean test --file pom.xml
+          CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
+          DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+          wget https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/bin/chromedriver
+          sudo chmod +x /usr/bin/chromedriver
+
+      # تشغيل Maven tests باستخدام xvfb (لأن Chrome يحتاج شاشة)
+      - name: Run Maven tests
+        run: |
+          xvfb-run -a mvn -B clean test --file pom.xml
