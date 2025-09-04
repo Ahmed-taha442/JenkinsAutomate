@@ -18,7 +18,9 @@ public class HomePage extends PageBase{
     WebElement login;
 
     public void clickRegister(){
+        waitForInvisibility(By.cssSelector(".ico-register']"));
         clickBtn(registerBtn);
+
     }
 
     public void loginFromHome(){

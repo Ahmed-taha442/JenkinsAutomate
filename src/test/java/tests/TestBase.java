@@ -38,10 +38,7 @@ public class TestBase {
         driver.get("https://demo.nopcommerce.com/");
 
         // Explicit Wait for page load
-        new WebDriverWait(driver, Duration.ofSeconds(20))
-                .until(webDriver -> ((JavascriptExecutor) webDriver)
-                        .executeScript("return document.readyState").equals("complete"));
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @AfterSuite

@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,6 +40,7 @@ public class RegistrationPage extends PageBase{
         sendKey(password,userPassword);
         sendKey(confirmPassword,userConfirmPass);
         clickBtn(submit);
+        waitForInvisibility(By.cssSelector(".ico-register']"));
 
 
 
