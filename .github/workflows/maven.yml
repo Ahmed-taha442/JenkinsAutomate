@@ -20,30 +20,13 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # ✅ تثبيت Chrome + ChromeDriver
-      - name: Install Chrome & ChromeDriver
+      #  تثبيت Chrome فقط 
+      - name: Install Chrome
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget unzip xvfb
-          # تثبيت Google Chrome
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt install -y ./google-chrome-stable_current_amd64.deb
-          # تحديد نسخة Chrome
-          CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
-          echo "Chrome version: $CHROME_VERSION"
-          # تثبيت ChromeDriver
-          DRIVER_VERSION=$(curl -sS "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-          echo "ChromeDriver version: $DRIVER_VERSION"
-          wget https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/bin/chromedriver
-          sudo chmod +x /usr/bin/chromedriver
+          sudo apt-get install -y google-chrome-stable
 
-      # ✅ تشغيل Maven Tests مع xvfb
+      #  Maven Tests
       - name: Build and Test with Maven
         run: |
-          xvfb-run -a mvn -B clean test --file pom.xml
-
-      # Optional: رفع dependency graph
-      - name: Update dependency graph
-        uses: advanced-security/maven-dependency-submission-action@v4
+          mvn -B clean test --file pom.xml
