@@ -1,5 +1,6 @@
 package tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,28 +14,28 @@ import java.time.Duration;
 public class TestBase {
     public static WebDriver driver;
 
-    public String generalEmail = "ahmed@gmai4854555545444l858.com";
+    public String generalEmail = "ahmed@gmai485455554454544l858.com";
     public String generalPassword = "123456_Test";
 
     @BeforeSuite
-
     public void Start() {
+        WebDriverManager.chromedriver().setup();
+
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");  // أو "--headless"
+        options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://demo.nopcommerce.com/");
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(webDriver -> ((JavascriptExecutor) webDriver)
-                        .executeScript("return document.readyState").equals("complete"));
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-        driver.manage().window().maximize();
     }
+
     @AfterSuite
-    public void teerDown(){
-        driver.quit();
+    public void teerDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
