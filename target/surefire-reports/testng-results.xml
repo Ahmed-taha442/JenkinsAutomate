@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-05T18:22:05 EEST" name="Nop Commerce" finished-at="2025-09-05T18:22:14 EEST" duration-ms="9775">
+  <suite started-at="2025-09-05T18:28:53 EEST" name="Nop Commerce" finished-at="2025-09-05T18:29:03 EEST" duration-ms="9855">
     <groups>
     </groups>
-    <test started-at="2025-09-05T18:22:05 EEST" name="C:/Users/NV_User/Documents/NopCommerced" finished-at="2025-09-05T18:22:14 EEST" duration-ms="9775">
+    <test started-at="2025-09-05T18:28:53 EEST" name="C:/Users/NV_User/Documents/NopCommerced" finished-at="2025-09-05T18:29:03 EEST" duration-ms="9855">
       <class name="tests.LoginTest">
-        <test-method signature="login()[pri:0, instance:tests.LoginTest@130161f7]" started-at="2025-09-05T18:22:07 EEST" name="login" finished-at="2025-09-05T18:22:08 EEST" duration-ms="621" status="PASS">
+        <test-method signature="login()[pri:0, instance:tests.LoginTest@130161f7]" started-at="2025-09-05T18:28:56 EEST" name="login" finished-at="2025-09-05T18:28:57 EEST" duration-ms="628" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="goAccount()[pri:0, instance:tests.LoginTest@130161f7]" started-at="2025-09-05T18:22:08 EEST" name="goAccount" finished-at="2025-09-05T18:22:10 EEST" depends-on-methods="tests.LoginTest.login" duration-ms="2093" status="PASS">
+        <test-method signature="goAccount()[pri:0, instance:tests.LoginTest@130161f7]" started-at="2025-09-05T18:28:57 EEST" name="goAccount" finished-at="2025-09-05T18:28:59 EEST" depends-on-methods="tests.LoginTest.login" duration-ms="1967" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goAccount -->
       </class> <!-- tests.LoginTest -->
       <class name="tests.MyAccountTest">
-        <test-method signature="goMyAccount()[pri:1, instance:tests.MyAccountTest@2c767a52]" started-at="2025-09-05T18:22:10 EEST" name="goMyAccount" finished-at="2025-09-05T18:22:14 EEST" duration-ms="4480" status="PASS">
+        <test-method signature="goMyAccount()[pri:1, instance:tests.MyAccountTest@2c767a52]" started-at="2025-09-05T18:28:59 EEST" name="goMyAccount" finished-at="2025-09-05T18:29:03 EEST" duration-ms="4317" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goMyAccount -->
       </class> <!-- tests.MyAccountTest -->
       <class name="tests.LRegistrationTest">
-        <test-method is-config="true" signature="Start()[pri:0, instance:tests.LRegistrationTest@7ed7259e]" started-at="2025-09-05T18:22:01 EEST" name="Start" finished-at="2025-09-05T18:22:05 EEST" duration-ms="3433" status="PASS">
+        <test-method is-config="true" signature="Start()[pri:0, instance:tests.LRegistrationTest@7ed7259e]" started-at="2025-09-05T18:28:51 EEST" name="Start" finished-at="2025-09-05T18:28:53 EEST" duration-ms="2902" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Start -->
-        <test-method signature="UserCanRegisterSuccessfully()[pri:0, instance:tests.LRegistrationTest@7ed7259e]" started-at="2025-09-05T18:22:05 EEST" name="UserCanRegisterSuccessfully" finished-at="2025-09-05T18:22:07 EEST" duration-ms="2563" status="PASS">
+        <test-method signature="UserCanRegisterSuccessfully()[pri:0, instance:tests.LRegistrationTest@7ed7259e]" started-at="2025-09-05T18:28:53 EEST" name="UserCanRegisterSuccessfully" finished-at="2025-09-05T18:28:56 EEST" duration-ms="2921" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserCanRegisterSuccessfully -->
-        <test-method is-config="true" signature="teerDown()[pri:0, instance:tests.LRegistrationTest@7ed7259e]" started-at="2025-09-05T18:22:14 EEST" name="teerDown" finished-at="2025-09-05T18:22:15 EEST" duration-ms="130" status="PASS">
+        <test-method is-config="true" signature="teerDown()[pri:0, instance:tests.LRegistrationTest@7ed7259e]" started-at="2025-09-05T18:29:03 EEST" name="teerDown" finished-at="2025-09-05T18:29:03 EEST" duration-ms="130" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teerDown -->

@@ -17,7 +17,7 @@ public class LoginPage extends PageBase{
     WebElement submit ;
     @FindBy(css = ".ico-account")
     WebElement myAccount;
-    @FindBy(xpath = "//a[normalize-space()='Change password']")
+    @FindBy(xpath = "//li[@class='change-password inactive']")
     WebElement goAccount;
 
 
