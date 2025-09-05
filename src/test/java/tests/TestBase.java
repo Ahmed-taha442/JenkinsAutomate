@@ -33,7 +33,7 @@ public String generalEmail = "fdfdf7@g55z555m5ail.com";
 // اجعل كل run له user-data-dir مختلف
         options.addArguments("--user-data-dir=/tmp/chrome-user-data-" + System.currentTimeMillis());
 
-        WebDriver driver = new ChromeDriver(options);
+         driver = new ChromeDriver(options);
 
         driver.get("https://demo.nopcommerce.com/");
     }
