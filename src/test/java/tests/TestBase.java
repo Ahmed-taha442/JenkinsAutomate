@@ -17,23 +17,24 @@ public class TestBase {
     public static WebDriver driver;
 
 //    public String generalEmail = "ahmed" + System.currentTimeMillis() + "@gmail.com";
-public String generalEmail = "fdfdf7@g55z55m5ail.com";
+public String generalEmail = "fdfdf7@g55z555m5ail.com";
     public String generalPassword = "123456_Test";
 
     @BeforeSuite
     public void Start() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
 
-
-        options.addArguments("--headless");
-
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--remote-allow-origins=*");
         options.addArguments("--window-size=1920,1080");
-        driver = new ChromeDriver();
+// اجعل كل run له user-data-dir مختلف
+        options.addArguments("--user-data-dir=/tmp/chrome-user-data-" + System.currentTimeMillis());
 
-        // ضبط حجم الشاشة
-        driver.manage().window().setSize(new Dimension(1920, 2000));
+        WebDriver driver = new ChromeDriver(options);
 
-        // فتح الموقع
         driver.get("https://demo.nopcommerce.com/");
     }
 
