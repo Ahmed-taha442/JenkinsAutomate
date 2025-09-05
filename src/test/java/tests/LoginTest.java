@@ -3,10 +3,12 @@ package tests;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.MyAccountPage;
 
 public class LoginTest extends TestBase {
     HomePage homeObject;
     LoginPage loginPage;
+
 
     @Test
     public void login(){
@@ -22,9 +24,12 @@ public class LoginTest extends TestBase {
 
     @Test( dependsOnMethods = "login")
     public void goAccount(){
-        loginPage =new LoginPage(driver);
         loginPage.goMyAccount();
+        loginPage.myAccount();
+
+
     }
+
 
 
 }

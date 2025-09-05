@@ -17,6 +17,8 @@ public class LoginPage extends PageBase{
     WebElement submit ;
     @FindBy(css = ".ico-account")
     WebElement myAccount;
+    @FindBy(xpath = "//a[normalize-space()='Change password']")
+    WebElement goAccount;
 
 
 
@@ -32,6 +34,10 @@ public class LoginPage extends PageBase{
     }
     public void goMyAccount(){
         clickBtn(myAccount);
+    }
+    public void myAccount(){
+        waitForvisibility(goAccount);
+        clickBtn(goAccount);
     }
 
 }

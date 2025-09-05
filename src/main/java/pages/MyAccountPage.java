@@ -13,8 +13,7 @@ public class MyAccountPage extends PageBase{
     }
     private WebDriverWait wait;
 
-    @FindBy(css = "a[href='/customer/changepassword']")
-    WebElement goAccount;
+
     @FindBy(css = "#OldPassword")
     WebElement oldPassword;
     @FindBy(css = "#NewPassword")
@@ -30,10 +29,7 @@ public class MyAccountPage extends PageBase{
     @FindBy(xpath = "//a[normalize-space()='Log out']")
     WebElement logOut;
 
-    public void myAccount(){
-        waitForvisibility(goAccount);
-        clickBtn(goAccount);
-    }
+
 
     public void changPassword(String oldPass,String newPass,String confirmPass){
         sendKey(newPassword,newPass);
