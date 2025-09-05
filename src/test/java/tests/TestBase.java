@@ -16,7 +16,7 @@ public class TestBase {
     public static WebDriver driver;
 
 //    public String generalEmail = "ahmed" + System.currentTimeMillis() + "@gmail.com";
-public String generalEmail = "fdfd45f56554m5@hhail.com";
+public String generalEmail = "fdfd45f565554m544445@hhail.com";
     public String generalPassword = "123456_Test";
 
     @BeforeSuite

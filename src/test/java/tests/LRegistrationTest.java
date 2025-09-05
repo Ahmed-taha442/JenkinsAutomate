@@ -17,7 +17,7 @@ public class LRegistrationTest extends TestBase{
         homeObject = new HomePage(driver);
         homeObject.clickRegister();
         registrationObject = new RegistrationPage(driver);
-        registrationObject.successsfulRegistration("Ahmed", "Taha", generalEmail, "Samh", generalPassword, "123456_Test");
+        registrationObject.successsfulRegistration("Ahmed", "Taha", generalEmail, "Samh", generalPassword, generalPassword);
         registrationObject.logouts();
     }
 

@@ -4,7 +4,7 @@
     <test  name="C:/Users/NV_User/Documents/NopCommerced">
         <classes>
             <class name="tests.LRegistrationTest"/>
-<!--            <class name="utilitize.LoginTest"/>-->
+            <class name="tests.LoginTest"/>
 <!--            <class name="utilitize.MyAccountTest"/>-->
 
 
