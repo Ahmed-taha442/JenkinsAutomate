@@ -36,6 +36,7 @@ public class LoginPage extends PageBase{
         clickBtn(myAccount);
     }
     public void myAccount(){
+        scrollToBottom();
         waitForvisibility(goAccount);
         clickBtn(goAccount);
     }
