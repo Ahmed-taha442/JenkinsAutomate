@@ -36,6 +36,8 @@ public String generalEmail = "fdfdf7@g55z555m5ail.com";
          driver = new ChromeDriver(options);
 
         driver.get("https://demo.nopcommerce.com/");
+        System.out.println("Current URL: " + driver.getCurrentUrl());
+
     }
 
     @AfterSuite
