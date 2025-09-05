@@ -16,7 +16,7 @@ public class TestBase {
     public static WebDriver driver;
 
 //    public String generalEmail = "ahmed" + System.currentTimeMillis() + "@gmail.com";
-public String generalEmail = "fdfd45f565554m544445@hhail.com";
+public static String generalEmail ;
     public String generalPassword = "123456_Test";
 
     @BeforeSuite
@@ -34,6 +34,8 @@ public String generalEmail = "fdfd45f565554m544445@hhail.com";
 
         driver.get("https://demo.nopcommerce.com/");
         System.out.println("Current URL: " + driver.getCurrentUrl());
+        generalEmail = "ahmed" + System.currentTimeMillis() + "@gmail.com";
+
 
 
 

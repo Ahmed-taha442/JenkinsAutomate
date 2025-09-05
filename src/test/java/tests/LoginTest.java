@@ -14,6 +14,8 @@ public class LoginTest extends TestBase {
         homeObject.loginFromHome();
         loginPage = new LoginPage(driver);
         loginPage.login(generalEmail,generalPassword);
+        System.out.println("Login done with: " + generalEmail);
+
         loginPage.submitBtn();
 
     }
