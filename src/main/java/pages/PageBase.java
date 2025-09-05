@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -40,6 +39,10 @@ public class PageBase {
     }
     public void waitForvisibility(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waiturlcontain(String path){
+        wait.until(ExpectedConditions.urlContains(path));
     }
     public void scrollToBottom() {
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");

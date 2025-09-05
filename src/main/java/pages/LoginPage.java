@@ -36,7 +36,7 @@ public class LoginPage extends PageBase{
         clickBtn(myAccount);
     }
     public void myAccount(){
-        scrollToBottom();
+        waiturlcontain("https://demo.nopcommerce.com/customer/info");
         waitForvisibility(goAccount);
         clickBtn(goAccount);
     }

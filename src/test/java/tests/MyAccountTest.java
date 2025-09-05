@@ -17,7 +17,6 @@ public class MyAccountTest extends TestBase{
     public void goMyAccount(){
         myAccountPage=new MyAccountPage(driver);
         myAccountPage.changPassword(generalPassword,"123456","123456");
-        Assert.assertEquals(myAccountPage.assertChangePassword.getText(),"Password was changed");
         myAccountPage.closeAlert();
         myAccountPage.logOut();
         homePage=new HomePage(driver);

@@ -31,6 +31,7 @@ public class RegistrationPage extends PageBase{
     public WebElement logOut;
 
 
+
     public void successsfulRegistration (String fName, String lName, String email, String nameCompany, String userPassword, String userConfirmPass){
         clickBtn(gender);
         sendKey(firstNme,fName);
