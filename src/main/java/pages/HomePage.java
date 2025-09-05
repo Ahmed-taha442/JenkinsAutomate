@@ -15,20 +15,21 @@ public class HomePage extends PageBase{
         super(driver);
     }
 
-    @FindBy(className = "ico-register")
+    @FindBy(xpath = "//a[normalize-space()='Register']")
     WebElement registerBtn;
-    @FindBy(css = ".ico-login")
+    @FindBy(xpath = "//a[normalize-space()='Log in']")
     WebElement login;
 
 //
 public void clickRegister() {
+    waitForvisibility(registerBtn);
     //
-
     clickBtn(registerBtn);
 }
 
 
     public void loginFromHome(){
+    waitForvisibility(login);
 
         clickBtn(login);
     }

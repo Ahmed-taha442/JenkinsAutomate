@@ -21,7 +21,7 @@ public class PageBase {
     public  PageBase (WebDriver driver){
         this.driver = driver;
         PageFactory .initElements(driver,this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         action = new Actions(driver);
 
 
