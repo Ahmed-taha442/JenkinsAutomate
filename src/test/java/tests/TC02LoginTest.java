@@ -3,9 +3,8 @@ package tests;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.MyAccountPage;
 
-public class LoginTest extends TestBase {
+public class TC02LoginTest extends TestBase {
     HomePage homeObject;
     LoginPage loginPage;
 

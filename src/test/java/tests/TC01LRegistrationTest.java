@@ -1,13 +1,11 @@
 package tests;
 
 
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.RegistrationPage;
 
-public class LRegistrationTest extends TestBase{
+public class TC01LRegistrationTest extends TestBase{
     HomePage homeObject ;
     RegistrationPage registrationObject ;
 

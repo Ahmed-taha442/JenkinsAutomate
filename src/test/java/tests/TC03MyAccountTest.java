@@ -1,13 +1,12 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.MyAccountPage;
 import pages.RegistrationPage;
 
-public class MyAccountTest extends TestBase{
+public class TC03MyAccountTest extends TestBase{
     MyAccountPage myAccountPage;
     LoginPage loginPage;
     HomePage homePage ;

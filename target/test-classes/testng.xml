@@ -3,9 +3,9 @@
 <suite name="Nop Commerce">
     <test  name="C:/Users/NV_User/Documents/NopCommerced">
         <classes>
-            <class name="tests.LRegistrationTest"/>
-            <class name="tests.LoginTest"/>
-            <class name="tests.MyAccountTest"/>
+            <class name="tests.TC01LRegistrationTest"/>
+            <class name="tests.TC02LoginTest"/>
+            <class name="tests.TC03MyAccountTest"/>
 
 
 

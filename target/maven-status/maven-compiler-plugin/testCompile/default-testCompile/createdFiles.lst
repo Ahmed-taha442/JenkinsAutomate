@@ -1,4 +1,4 @@
-tests\MyAccountTest.class
-tests\LoginTest.class
-tests\LRegistrationTest.class
+tests\TC02LoginTest.class
+tests\TC01LRegistrationTest.class
+tests\TC03MyAccountTest.class
 tests\TestBase.class
