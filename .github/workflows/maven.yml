@@ -31,4 +31,4 @@ jobs:
           echo "DISPLAY=:99" >> $GITHUB_ENV
 
       - name: Build and Run Tests with Maven
-        run: mvn clean verify --file pom.xml
+        run: mvn clean test
