@@ -25,8 +25,12 @@ public class TC02LoginTest extends TestBase {
     public void goAccount(){
         loginPage.goMyAccount();
         System.out.println(driver.getCurrentUrl());
-        loginPage.myAccount();
 
+
+    }
+    @Test(dependsOnMethods = "goAccount")
+    public void change(){
+        loginPage.myAccount();
 
     }
 
