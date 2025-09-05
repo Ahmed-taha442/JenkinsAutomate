@@ -28,7 +28,7 @@ public String generalEmail = "fdfdf7@g55z55m5ail.com";
         options.addArguments("--headless");
 
         options.addArguments("--window-size=1920,1080");
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
 
         // ضبط حجم الشاشة
         driver.manage().window().setSize(new Dimension(1920, 2000));
