@@ -25,6 +25,7 @@ public class LoginTest extends TestBase {
     @Test( dependsOnMethods = "login")
     public void goAccount(){
         loginPage.goMyAccount();
+        System.out.println("iam in my account page");
         loginPage.myAccount();
 
 
