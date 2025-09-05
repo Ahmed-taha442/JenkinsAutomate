@@ -31,6 +31,7 @@ public class MyAccountPage extends PageBase{
     WebElement logOut;
 
     public void myAccount(){
+        waitForvisibility(goAccount);
         clickBtn(goAccount);
     }
 

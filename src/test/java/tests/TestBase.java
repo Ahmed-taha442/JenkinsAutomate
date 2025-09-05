@@ -34,7 +34,6 @@ public static String generalEmail ;
 
         driver.get("https://demo.nopcommerce.com/");
         System.out.println("Current URL: " + driver.getCurrentUrl());
-        driver.manage().window().maximize();
         generalEmail = "ahmed" + System.currentTimeMillis() + "@gmail.com";
 
 
