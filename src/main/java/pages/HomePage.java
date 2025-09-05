@@ -20,23 +20,16 @@ public class HomePage extends PageBase{
     @FindBy(css = ".ico-login")
     WebElement login;
 
-//    public void clickRegister(){
-//        waitForInvisibility(By.cssSelector(".ico-register']"));
-//        clickBtn(registerBtn);
 //
-//    }
 public void clickRegister() {
-    // Wait for the register button to be clickable before clicking
-    // The locator used in the wait should be a By object
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    wait.until(ExpectedConditions.elementToBeClickable(registerBtn));
+    //
+
     clickBtn(registerBtn);
 }
 
 
     public void loginFromHome(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(login));
+
         clickBtn(login);
     }
 }

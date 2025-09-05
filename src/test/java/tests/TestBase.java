@@ -16,34 +16,28 @@ import java.time.Duration;
 public class TestBase {
     public static WebDriver driver;
 
-    public String generalEmail = "ahmed@gmai444454l.com";
+//    public String generalEmail = "ahmed" + System.currentTimeMillis() + "@gmail.com";
+public String generalEmail = "fdfdf7@g55z55m5ail.com";
     public String generalPassword = "123456_Test";
 
-    @BeforeMethod
+    @BeforeSuite
     public void Start() {
         ChromeOptions options = new ChromeOptions();
 
-        // Headless for Linux (GitHub Actions)
-        String osName = System.getProperty("os.name").toLowerCase();
-        if (osName.contains("linux")) {
-            options.addArguments("--headless");
-            options.addArguments("--disable-gpu");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--window-size=1440,900");
-        }
 
+        options.addArguments("--headless");
 
+        options.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver(options);
 
-        driver.manage().window().setSize(new Dimension(1440, 900));
-        driver.get("https://demo.nopcommerce.com/");
+        // ضبط حجم الشاشة
+        driver.manage().window().setSize(new Dimension(1920, 2000));
 
-        // Explicit Wait for page load
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        // فتح الموقع
+        driver.get("https://demo.nopcommerce.com/");
     }
 
-    @AfterMethod
+    @AfterSuite
     public void teerDown() {
         if (driver != null) {
             driver.quit();

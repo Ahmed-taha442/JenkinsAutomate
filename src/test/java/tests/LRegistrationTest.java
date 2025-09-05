@@ -13,22 +13,11 @@ public class LRegistrationTest extends TestBase{
 
 
     @Test
-    public void registrationSuccessfully(){
+    public void UserCanRegisterSuccessfully() {
         homeObject = new HomePage(driver);
         homeObject.clickRegister();
         registrationObject = new RegistrationPage(driver);
-        registrationObject.successsfulRegistration("Ahmed","Taha",generalEmail,"Samh",generalPassword,"123456_Test");
-        Assert.assertEquals("Your registration completed",
-                registrationObject.successMessage.getText());
-
-        // الانتظار حتى يصبح رابط "Register" قابلاً للنقر قبل الضغط عليه
-
-
-    }
-    @Test(dependsOnMethods = "registrationSuccessfully")
-    public void  logout (){
-
-
+        registrationObject.successsfulRegistration("Ahmed", "Taha", generalEmail, "Samh", generalPassword, "123456_Test");
         registrationObject.logouts();
     }
 

@@ -40,7 +40,6 @@ public class RegistrationPage extends PageBase{
         sendKey(password,userPassword);
         sendKey(confirmPassword,userConfirmPass);
         clickBtn(submit);
-        waitForInvisibility(By.cssSelector(".ico-register']"));
 
 
 

@@ -7,25 +7,29 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class PageBase {
     protected WebDriver driver ;
-    protected WebDriverWait wait;
+    public WebDriverWait wait;
     protected Actions action;
 
 
     public  PageBase (WebDriver driver){
         this.driver = driver;
         PageFactory .initElements(driver,this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         action = new Actions(driver);
 
 
     }
-    protected static void clickBtn(WebElement Button){
+    protected  void clickBtn(WebElement Button){
+        waitForvisibility(Button);
+        wait.until(ExpectedConditions.elementToBeClickable(Button));
+
         Button.click();
     }
     protected static void sendKey(WebElement item , String text){
@@ -33,6 +37,9 @@ public class PageBase {
     }
     public void waitForInvisibility(By locator) {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+    public void waitForvisibility(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
     public void scrollToBottom() {
         ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight);");
